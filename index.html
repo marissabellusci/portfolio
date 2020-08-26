@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marissa Bellusci</title>
+  <link rel="shortcut icon" type="image/png" href=favicon.png>
+  <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300&display=swap" rel="stylesheet"></head>
+<body>
+  <style>
+  .navbar {
+    z-index: 2; /* ensures navbar is layered on top of page content */
+    display: block;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+}
+
+ .navlink {
+   text-decoration: none;
+
+ }
+
+    html {
+      box-sizing: border-box;
+      background: rgb(0, 0, 0);
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    
+    body {
+      margin: 0;
+    }
+  
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+
+    }
+
+    .panel {
+      background: white;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      flex: 1; /*flex-grow is 1 so each one will evenly distribute extra space amongst themselves*/
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+    }
+
+    .panel1 { background-image:url(laptop.jpg); }
+    .panel2 { background-image:url(books.jpg); }
+    .panel3 { background-image:url(cafe.jpg); }
+
+    /* Flex panels */
+    .panel > * { /* the '>' selects the direct descendants of .panel and the '*' selects ALL of them */
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      flex: 1 0 auto; /* this makes flex-grow = 1, flex-shrink = 0, and flex-basis = auto*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    .panel > *:first-child{transform: translateY(-500%); opacity:0 ;}
+    .panel.open-active > *:first-child{transform: translateY(0); opacity:1;}
+    .panel > *:last-child{transform: translateY(500%); opacity: 0;}
+    .panel.open-active > *:last-child{transform: translateY(0); opacity:1;}
+
+    .panel p {
+      /*text-transform: none;*/
+      font-family: 'BenchNine', sans-serif;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 1.5em;
+    }
+
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    .panel.open {
+      font-size: 40px;
+      flex: 3; /* when open a panel will take up 5x the amt of room as the others*/
+    
+    }
+    
+    a{
+       color: white; 
+       padding-left: 15px;
+       padding-right: 15px;
+       border-radius: 25px;
+    }
+
+    .reglink {
+      color: 'white';
+      background: linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5));
+      text-decoration: none;
+      text-shadow: 0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    }
+
+    @media only screen and (max-width: 1000px){
+      /*MOBILE*/
+      .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    };
+
+    html{
+    font-size: 30px;
+     width: 100vw;
+ }
+
+    .navbar{
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    height: fit-content;
+    z-index: 2;
+  }
+
+  .panel p:nth-child(2){
+    font-size: 10rem;
+  }
+
+  .panel p{
+    font-size: 4rem;
+  }
+
+  #first{
+    margin-top: 3rem;
+  }
+ };
+
+
+  </style>
+
+<header class="navbar">
+
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-landing-page/">Home</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-main-page/">Portfolio</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-aboutme/">About</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-connect/">Connect</a>
+
+
+
+</header>
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p id="first">Coding</p>
+      <p>Portfolio</p>
+      <p> <a class = "reglink" href = "https://marissabellusci.github.io/portfolio-main-page/"> View Projects! </a> </p>
+    </div>
+    <div class="panel panel2">
+      <p>Marissa Bellusci</p>
+      <p>About</p>
+      <p> <a class = "reglink" href = "https://marissabellusci.github.io/portfolio-aboutme/"> Read Bio! </a></p>
+    </div>
+    <div class="panel panel3">
+      <p>Let's</p>
+      <p>Connect</p>
+      <p> <a class = "reglink" href ="https://marissabellusci.github.io/portfolio-connect/"> Go to Socials! </a> </p>
+    </div>
+  </div>
+
+  <script>
+      const panels = document.querySelectorAll('.panel');
+
+      function toggleOpen(){
+          this.classList.toggle('open');
+      }
+
+      function toggleActive(e){
+          console.log(e.propertyName);
+          if (e.propertyName === 'flex-grow' || e.propertyName ==='flex') /*bug in safari only shows propertyName as 'flex'*/{
+            this.classList.toggle('open-active');
+          }
+         
+      }
+
+      panels.forEach(panel => panel.addEventListener('click',toggleOpen));
+      panels.forEach(panel => panel.addEventListener('transitionend',toggleActive));
+  
+    const triggers = document.querySelectorAll('.reglink');
+
+
+    function highlightLink(){
+        this.style.color = 'white';
+        this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
+        this.style.textDecoration = 'none';
+        this.style.textShadow = '-2px -2px 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(255, 255, 255, 0.2), 0 0 14px rgba(0, 0, 0, 0.45)';
+        this.style.transform = 'translate(.5px, .5px)';
+    }
+
+    function unHighlightLink(){
+        this.style.color = 'white';
+        this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
+        this.style.textDecoration = 'none';
+        this.style.textShadow = '0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
+        this.style.transform = 'translate(-.5px, -.5px)';
+    }
+
+
+    triggers.forEach(a => a.addEventListener('mouseenter',highlightLink));
+
+    triggers.forEach(a => a.addEventListener('mouseleave',unHighlightLink));
+
+    const paragraphs = document.querySelectorAll('p');
+
+    function fadeIn(){
+      paragraphs.forEach(paragraph => paragraph.classList.add('visible'));
+    }
+
+    window.addEventListener('load',fadeIn);
+
+  </script>
+
+
+
+</body>
+</html>
