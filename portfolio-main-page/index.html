@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marissa Bellusci - Portfolio</title>
+  <link rel="shortcut icon" type="image/png" href=favicon.png>
+<body>
+
+<style>
+
+html {
+      box-sizing: border-box;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      background: linear-gradient(rgb(243, 242, 242), white);
+    }
+    
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+    display: block;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    z-index: 1; /* ensures navbar is layered on top of page content */
+    padding-top: 4px;
+    padding-bottom: 1px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+ .navlink {
+   text-decoration: none;
+   color: white; 
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+
+ }
+
+.header {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 1vh;
+  font-size: 4rem;
+  display: block;
+}
+
+.outer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
+  min-height: fit-content;
+  
+}
+
+.items {
+  display: flex;
+  flex-grow: 1;
+  border: solid lightgray;
+  width: 25vw;
+  height: fit-content;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;;
+  padding: .25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 3px 15px 4px rgba(155,155,155,0.3);
+  background: linear-gradient(rgb(243, 242, 242), white);
+
+  transition: all 1s;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.items.active{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+img {
+  border-radius: 10px;
+  box-shadow: 5px, 10px;
+  flex-grow: 5;
+  width: 80%;
+  margin: auto;
+  display: block;
+  box-shadow: 1px 1px 5px lightgrey;
+}
+
+a > p {
+  border: none;
+  flex-grow: 1;
+  width: 80%;
+  margin-block-end: 0em;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+  display: block;
+  padding-top: 1rem;
+}
+
+@media (max-width: 1000px){
+  .items{
+  width: fit-content;
+  height: fit-content;
+  margin: 1rem 3rem 1rem 3rem;
+  padding: 1rem 1rem 2rem 1rem;
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+
+ html{
+   font-size: 30px;
+   width: 100vw;
+ }
+
+  .navbar{
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .container {
+    width: 100vw;
+  }
+
+  p{
+    margin: 3rem auto 2rem auto;
+    font-size: 2rem;
+  }
+
+  h1{
+    font-size: 6rem;
+  }
+
+}
+
+
+  </style>
+
+<header class="navbar">
+
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-landing-page/">Home</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-main-page/">Portfolio</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-aboutme/">About</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-connect/">Connect</a>
+
+
+</header>
+
+  <h1 class="header">Portfolio</h1>
+
+<div class="outer-container">
+<div class="container">
+
+  <!--IMAGES MUST BE SIZED TO 464x464 PIXELS-->
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/LocalStorage/" target=_blank>
+    <img src="local-storage.png" alt="Picture from local storage exercise">
+    <p>Saving to Local Storage</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/sticky-nav/" target=_blank>
+    <img src="stickynav.png">
+    <p>Sticky Navigation Bar</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/JS-and-CSS-Clock/" target=_blank>
+    <img src="JS-CSS-Clock.png" alt="Picture from JS/CSS Clock App">
+    <p>JS and CSS Clock</p>
+    </div>
+  </a>
+  
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/HTML-5-Canvas/" target=_blank>
+    <img src="canvas.png" alt="Picture from HTML5 Canvas">
+    <p>HTML5 Canvas</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/whack-a-mole/" target=_blank>
+    <img src="whackamole.png" alt="Picture from Whack-A-Mole Game">
+    <p>Whack-A-Mole Game</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/TOP-countdown-clock/" target=_blank>
+    <img src="custom-timer.png">
+    <p>Custom Timer</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/video-speed-controller/" target=_blank>
+    <img src="videospeedcontroller.png">
+    <p>Video Playback Speed Controller</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/rock-paper-scissors-simulator/" target="_blank">
+    <img src="rockpaperscissors.png" alt="Picture from Rock Paper Scissors Simulator">
+    <p>Rock, Paper, Scissors Simulator</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/click-and-drag/" target=_blank>
+    <img src="drag-n-scroll.png" alt="Picture from Drag-To-Scroll Menu">
+    <p>Drag-to-Scroll Menu</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/follow-along-nav/" target=_blank>
+    <img src="transitioning-dropdown.png" alt="Picture from Transitioning Menu Dropdowns">
+    <p>Transitioning Menu Dropdowns</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/speech-synthesis/" target=_blank>
+    <img src="text-to-speech.png" alt="Picture from Text to Speech Simulator">
+    <p>Text to Speech</p>
+  </a>
+  </div>
+  
+  <div class="items">
+    <a href="https://marissabellusci.github.io/speech-recognition/" target=_blank>
+    <img src="Speech-to-Text.png" alt="Picture from Speech to Text App">
+    <p>Speech to Text</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/follow-along-link-highlighter/" target=_blank>
+    <img src="Link-highlight.png" alt="Picture from Transitioning Link Highlighter Project">
+    <p>Transitioning Link Highlighter</p>
+  </a>
+  </div>
+
+ <div class="items">
+    <a href="https://marissabellusci.github.io/webcam-exercise/" target=_blank>
+    <img src="webcam-RGB-filter.png" alt="Picture from Webcam App">
+    <p>Webcam with Filters</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/shadow-mouse-effect/" target=_blank>
+    <img src="text-shadow.png" alt="Picture from Shadow Mouse Effect">
+    <p>Shadow Mouse Effect</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/slide-in-on-scroll/" target=_blank>
+    <img src="image-slide-in.png" alt="Picture from Slide-in-on-scroll">
+    <p>Slide-In Image Transition</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/key-sequence-detection/" target=_blank>
+    <img src="Key-sequence-detection.png" alt="Picture from Key-Sequence-Detection/Konami Code">
+    <p>Key Detection/Konami Code</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/custom-video-player/" target=_blank>
+    <img src="custom-video-controls.png" alt="Picture from Custom Video Player Controls">
+    <p>Custom Video Player Controls</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/Hold-shift-to-check-multiple-boxes/" target=_blank>
+    <img src="hold-shift.png" alt="Picture from 'Hold Shift to Check Multiple Boxes' Exercise">
+    <p>Hold Shift to Check Multiple Boxes</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/Type-Ahead-Suggestor/" target=_blank>
+    <img src="type-ahead.png" alt="Picture from Type Ahead Suggestor">
+    <p>Type-Ahead Suggestor</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/Flex-Panels-Image-Gallery/" target=_blank>
+    <img src="flex-gallery.png" alt="Picture from Flex Panels Image Gallery">
+    <p>Flex Panels Image Gallery</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/CSS-Variables/" target=_blank>
+    <img src="update-css-js.png" alt="Picture from CSS-Variables">
+    <p>Updating CSS Variables with JS</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/JavaScript-Drum-Kit/" target=_blank>
+    <img src="drumkit.png" alt="Picture from JavaScript DrumKit">
+    <p>JavaScript DrumKit</p>
+  </a>
+  </div>
+
+  <div class="items">
+    <a href="https://marissabellusci.github.io/google-homepage/" target=_blank>
+    <img src="css-google.png" alt="Picture from CSS Deconstructing and Rebuilding">
+    <p>CSS Deconstructing & Rebuilding</p>
+  </a>
+  </div>
+
+</div>
+</div>
+</div>
+
+<footer></footer>
+
+<script>
+
+function debounce(func, wait = 10, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    const items = document.querySelectorAll('.items');
+
+    function checkFade(e){
+      
+      items.forEach(item => {
+        //halfway thru image
+      const fadeInAt = (window.scrollY + window.innerHeight) - item.clientHeight / 2; //window.scrollY tells us how far down the page is scrolled, measured from the top. To measure from the bottom, we add the height of the window.
+        //bottom of image
+      const itemBottom = item.offsetTop + item.clientHeight;
+        
+      
+      const isHalfShown = fadeInAt > item.offsetTop;
+
+      const isNotScrolledPast = window.scrollY < itemBottom;
+
+      if(isHalfShown && isNotScrolledPast){
+        item.classList.add('active');
+      }
+
+      else{
+        item.classList.remove('active');
+      }
+
+      })
+    }
+
+    window.addEventListener('scroll',debounce(checkFade));
+
+    window.addEventListener('load',debounce(checkFade));
+
+
+
+</script>
+
+</body>
+</html>

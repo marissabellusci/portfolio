@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marissa Bellusci - About Me</title>
+  <link rel="shortcut icon" type="image/png" href=favicon.png>
+<body>
+  <style>
+
+  html {
+    box-sizing: border-box;  
+    background: linear-gradient(rgb(243, 242, 242), white);
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+
+  .navbar {
+    z-index: 1; /* ensures navbar is layered on top of page content */
+    display: block;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+}
+
+ .navlink {
+   text-decoration: none;
+   color: white; 
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+}
+
+h1{
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 1vh;
+  font-size: 4rem;
+  display: block;
+}
+
+h2{
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 1vh;
+  font-size: 2rem;
+  display: block;
+}
+
+p{
+  margin: 1rem 10rem 1rem 10rem;
+  text-align: center;
+}
+
+a{
+  text-decoration: underline;
+  color: black;
+}
+
+img{
+  display: block;
+  margin: auto;
+}
+
+.container{
+  transition: all 1s;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.container.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 1000px){
+  .navbar{
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  h1{
+    font-size: 6rem;
+  }
+
+  p{
+    margin: 3rem auto 2rem auto;
+    font-size: 3rem;
+  }
+}
+
+    </style>
+
+<header class="navbar">
+
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-landing-page/">Home</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-main-page/">Portfolio</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-aboutme/">About</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-connect/">Connect</a>
+
+</header>
+
+<h1>About</h1>
+
+<div class="container">
+
+<p>Welcome to my portfolio page!</p>
+
+<p>I'm a growing web developer, self-taught using <a href="https://www.theodinproject.com/" target="_blank">The Odin Project,</a> <a href="https://www.freecodecamp.org/marissabellusci" target="_blank">FreeCodeCamp.org,</a>
+  <a href="https://wesbos.com/courses" target="_blank">Wes Bos's JS coursework,</a> and other various resources. Proficient in HTML5, CSS3, Git, GitHub,
+  and Bash shell command basics, I am now focusing on honing my JavaScript skills and feeding my ever-evolving 
+  passion for the language. 
+</p>
+
+<p>When first starting out with JavaScript, I began with Vanilla JS--completely
+  framework free. This has allowed me to get a thorough grasp on the inner workings and fundamentals
+  of JavaScript before applying frameworks--my next step. I am currently learning React.js
+  but am curious about other frameworks as well.
+</p>
+
+<p>As I continue my rapid growth, I remain open to opportunities to continue learning
+  alongside other like-minded individuals. If interested in working together, please visit my Connect page 
+  for contact details.
+</p>
+
+<p>Thanks for visiting my site!</p>
+
+<h2>Certifications</h2>
+
+<a href="https://www.freecodecamp.org/certification/marissabellusci/responsive-web-design">
+  <img src="cert1.png" alt="Image of Certification for Responsive Web Design from FreeCodeCamp.org">
+  <p>Responsive Web Design Certification from FreeCodeCamp.org</p>
+</a>
+
+</div>
+
+<script>
+
+function debounce(func, wait = 10, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+const container = document.querySelectorAll('.container');
+
+function checkFade(e){
+  
+  container.forEach(container => {
+  
+    //bottom of image
+  const containerBottom = container.offsetTop + container.clientHeight;
+    
+
+
+  const isNotScrolledPast = window.scrollY < containerBottom;
+
+  if(isNotScrolledPast){
+    container.classList.add('active');
+  }
+
+  else{
+    container.classList.remove('active');
+  }
+
+  })
+}
+
+window.addEventListener('scroll',debounce(checkFade));
+
+window.addEventListener('load',debounce(checkFade));
+
+</script>
+
+</body>
+</html>

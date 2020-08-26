@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marissa Bellusci - Social Media</title>
+  <link rel="shortcut icon" type="image/png" href=favicon.png>
+<body>
+  <style>
+
+  html {
+    box-sizing: border-box;
+    background: linear-gradient(rgb(243, 242, 242), white);
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 1vh;
+  font-size: 4rem;
+  display: block;
+}
+
+p {
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+  .navbar {
+    z-index: 1; /* ensures navbar is layered on top of page content */
+    display: block;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+}
+
+ .navlink {
+   text-decoration: none;
+   color: white; 
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+}
+
+.socials-links-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.socials-link{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  margin: .5rem 15rem .5rem 15rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  transition: all 1s;
+  opacity: 0;
+  transform: scale(0.95);
+  width: 50vw;
+  height: fit-content;
+}
+
+@media only screen and (max-width: 1000px){
+  .navbar{
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+  }
+  .socials-links-container {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .socials-link{
+    width: 80vw;
+    margin: 3rem 5rem 0rem 5rem;
+    padding: 3rem;
+    font-size: 3.5rem;
+    height: fit-content;
+  }
+
+  h1{
+    font-size: 6rem;
+  }
+
+  p{
+    font-size: 3rem;
+  }
+}
+
+.socials-link.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.LinkedIn {
+  background-color: #2867B2;
+}
+
+.GitHub {
+  background-color: black;
+}
+
+.Twitter {
+  background-color: #1DA1F2;
+}
+
+.Email {
+  background-color: #B23121;
+}
+
+
+    </style>
+
+<header class="navbar">
+
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-landing-page/">Home</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-main-page/">Portfolio</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-aboutme/">About</a>
+  <a class = "navlink" href = "https://marissabellusci.github.io/portfolio-connect/">Connect</a>
+
+</header>
+
+<h1>Connect</h1>
+<p>Drop me a line!</p>
+
+<div class="socials-links-container">
+<a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
+<a class="socials-link GitHub" href="https://github.com/marissabellusci" target=_blank>GitHub</a>
+<a class="socials-link Twitter" href="https://twitter.com/marissabellusci" target=_blank>Twitter</a>
+<a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
+</div>
+
+<script>
+
+  function debounce(func, wait = 10, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+const links = document.querySelectorAll('.socials-link');
+
+function checkFade(e){
+  
+  links.forEach(link => {
+    //halfway thru image
+  const fadeInAt = (window.scrollY + window.innerHeight) - link.clientHeight / 2; //window.scrollY tells us how far down the page is scrolled, measured from the top. To measure from the bottom, we add the height of the window.
+    //bottom of image
+  const linkBottom = link.offsetTop + link.clientHeight;
+    
+  
+  const isHalfShown = fadeInAt > link.offsetTop;
+
+  const isNotScrolledPast = window.scrollY < linkBottom;
+
+  if(isHalfShown && isNotScrolledPast){
+    link.classList.add('active');
+  }
+
+  else{
+    link.classList.remove('active');
+  }
+
+  })
+}
+
+window.addEventListener('scroll',debounce(checkFade));
+window.addEventListener('load',debounce(checkFade));
+
+//Changing buttons color on hover
+
+function changeColor(e){
+  this.style.transform = 'scale(1.01)';
+  this.style.boxShadow ='1px 1px 10px 4px gray'
+}
+
+function revertColor(e){
+  this.style.transform = 'scale(1)';
+  this.style.boxShadow = 'none';
+}
+
+links.forEach(link => link.addEventListener('mouseenter', changeColor));
+
+links.forEach(link => link.addEventListener('mouseleave', revertColor));
+
+
+    </script>
+
+</body>
+</html>
