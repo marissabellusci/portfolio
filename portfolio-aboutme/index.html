@@ -25,11 +25,12 @@
 
   html {
     box-sizing: border-box;  
-    background: linear-gradient(rgb(243, 242, 242), white);
+    background: linear-gradient(rgba(27, 185, 185, 0.281), rgba(27, 185, 185, 0.418), white);
     font-family: 'helvetica neue';
     font-size: 20px;
     font-weight: 200;
     padding-bottom: 3rem;
+    
 }
 
   .navbar {
@@ -66,18 +67,24 @@ h1{
   margin-bottom: 1vh;
   font-size: 4rem;
   display: block;
+  text-shadow: 5px 5px 2px white;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
 }
 
 h2{
   text-align: center;
   margin-top: 10vh;
   margin-bottom: 1vh;
-  font-size: 2rem;
+  font-size: 3rem;
   display: block;
 }
 
+#certs {
+  text-shadow: 4px 3px 0px #fff, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
 p{
-  margin: 1rem 10rem 1rem 10rem;
+  margin: 1rem 4rem 1rem 4rem;
   text-align: center;
 }
 
@@ -93,6 +100,11 @@ a:hover {
 img{
   display: block;
   margin: auto;
+  z-index: 2;
+}
+
+.img-cert{
+  box-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
 }
 
 .container{
@@ -106,6 +118,16 @@ img{
   transform: scale(1);
 }
 
+.bio {
+  background: linear-gradient(to right, white, rgb(232, 233, 233));
+  border-left: solid white;
+  border-radius: 10%;
+  padding: 1rem 0 2rem 0;
+  width: 70vw;
+  margin: auto;
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
+}
+
 @media only screen and (max-width: 1000px){
   .navbar{
     font-size: 3rem;
@@ -115,22 +137,31 @@ img{
 
   h1{
     font-size: 6rem;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
   }
 
   p{
-    margin: 3rem auto 2rem auto;
-    font-size: 3rem;
+    margin: 1rem auto 1rem auto;
+    font-size: 2rem;
+    width: 85vw;
+  }
+
+  .bio {
+    width: 95vw;
+    padding-top: 2rem;
   }
 }
 
 .skills-section {
-  background: rgb(105, 103, 103);
+  background:  rgb(121, 120, 120);
   padding: 1vh;
   color: white;
-  border-radius: 2%;
+  border-radius: 5%;
   width: 85vw;
   margin: auto;
   margin-top: 5rem;
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
 }
 
 .skills-container {
@@ -181,6 +212,47 @@ img{
   width: 50%;
 }
 
+.css-art{
+  background: white;
+  position: absolute;
+  width: 200px;
+  height: 160px;
+  transform: rotate(10deg) translateX(8rem) translateY(5rem) skewX(50deg);
+  border-radius: 10% 0 0 60%;
+  z-index: -1;
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
+}
+
+.css-art-1 {
+  border-radius: 50%;
+  background: gray;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  transform: translateY(1.2rem) translateX(6rem);
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
+}
+
+.css-art-2 {
+  border-radius: 50%;
+  background: gray;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  transform: translateY(5.5rem) translateX(3rem);
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
+}
+
+.css-art-3 {
+  border-radius: 50%;
+  background: gray;
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(8rem) translateX(0);
+  box-shadow: 4px 3px 0px #fff, 20px 16px 0px rgba(0,0,0,0.15);
+}
+
+
 </style>
 
 <header class="navbar">
@@ -196,8 +268,10 @@ img{
 <h1>About</h1>
 
 <div class="container">
+  <div class="css-art"></div>
+  <section class="bio">
 
-<p>Welcome to my portfolio page!</p>
+<p>Welcome to my portfolio site!</p>
 
 <p>I'm a growing web developer, self-taught using <a href="https://www.theodinproject.com/" target="_blank">The Odin Project,</a> <a href="https://www.freecodecamp.org/marissabellusci" target="_blank">FreeCodeCamp.org,</a>
   <a href="https://wesbos.com/courses" target="_blank">Wes Bos's JS coursework,</a> and other various resources. Proficient in HTML5, CSS3, Git, GitHub,
@@ -225,6 +299,7 @@ img{
 </p>
 
 <p>Thanks for visiting my site!</p>
+</section>
 
 <section class=skills-section>
 
@@ -253,13 +328,20 @@ img{
 </div>
 
 </section>
+<div class="css-art-1"></div>
+<div class="css-art-2"></div>
+<div class="css-art-3"></div>
 
-<h2>Certifications</h2>
+<h2 id="certs">Certifications</h2>
 
 <a href="https://www.freecodecamp.org/certification/marissabellusci/responsive-web-design">
-  <img src="cert1.png" alt="Image of Certification for Responsive Web Design from FreeCodeCamp.org">
+  <img class="img-cert" src="cert1.png" alt="Image of Certification for Responsive Web Design from FreeCodeCamp.org">
   <p>Responsive Web Design Certification from FreeCodeCamp.org</p>
 </a>
+
+<div class="css-art-4"></div>
+<div class="css-art-5"></div>
+<div class="css-art-6"></div>
 
 </div>
 
