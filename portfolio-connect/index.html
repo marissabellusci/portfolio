@@ -67,22 +67,21 @@ p {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items: center;
-  width: 100vw;
+
 }
 
 .socials-link{
   text-decoration: none;
   color: white;
   background-color: black;
-  margin: .5rem 15rem .5rem 15rem;
+  margin: .5rem 0rem .5rem 0rem;
   padding: 1rem;
   font-size: 1.5rem;
   letter-spacing: 2px;
   transition: all 1s;
   opacity: 0;
   transform: scale(0.95);
-  width: 50vw;
+  width: 30vw;
   height: fit-content;
 }
 
@@ -93,16 +92,14 @@ p {
     text-align: center;
   }
   .socials-links-container {
-    width: 100%;
     flex-grow: 1;
   }
 
   .socials-link{
-    width: 80vw;
-    margin: 3rem 5rem 0rem 5rem;
     padding: 3rem;
     font-size: 3.5rem;
     height: fit-content;
+    visibility: hidden;
   }
 
   h1{
@@ -135,6 +132,26 @@ p {
   background-color: #B23121;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.twitter-timeline {
+  margin: .5rem 0rem .5rem 0rem;
+  display: none;
+}
+
+.LI-profile-badge {
+  display: none;
+}
+
+#github-card {
+  display: none;
+}
+
 
     </style>
 
@@ -151,11 +168,24 @@ p {
 <h1>Connect</h1>
 <p>Drop me a line!</p>
 
+<div class="content-container">
+
 <div class="socials-links-container">
 <a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
 <a class="socials-link GitHub" href="https://github.com/marissabellusci" target=_blank>GitHub</a>
 <a class="socials-link Twitter" href="https://twitter.com/marissabellusci" target=_blank>Twitter</a>
 <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
+</div>
+
+<!--Social media APIs-->
+<a class="twitter-timeline" data-lang="en" data-width="406" data-height="300" href="https://twitter.com/marissabellusci?ref_src=twsrc%5Etfw">Tweets by marissabellusci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
+<div id="github-card" class="github-card" data-user="marissabellusci"></div><script src="http://lab.lepture.com/github-cards/widget.js"></script>
+
+
+
+<!--END-->
+
 </div>
 
 <script>
@@ -204,7 +234,7 @@ function checkFade(e){
 window.addEventListener('scroll',debounce(checkFade));
 window.addEventListener('load',debounce(checkFade));
 
-//Changing buttons color on hover
+//Changing buttons' color on hover
 
 function changeColor(e){
   this.style.transform = 'scale(1.01)';
@@ -219,7 +249,6 @@ function revertColor(e){
 links.forEach(link => link.addEventListener('mouseenter', changeColor));
 
 links.forEach(link => link.addEventListener('mouseleave', revertColor));
-
 
     </script>
 
