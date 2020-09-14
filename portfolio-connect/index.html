@@ -117,9 +117,14 @@ p {
   padding: 0rem 1rem 1rem 1rem;
 }
 
-#github-card {
+.github-widget {
   display: block;
-  margin: 10rem 0 10rem 0;
+  background: white;
+  border-radius: 5px;
+  font-size: .8rem;
+  width: 300px;
+  height: 406px;
+  overflow:scroll;
   
 }
 
@@ -196,25 +201,25 @@ p {
 <div class="content-container">
 
   <div class="link-group">
-<a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge badges"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
-  </div>
-
-  <div class="link-group">
   <a class="socials-link GitHub" href="https://github.com/marissabellusci" target=_blank>GitHub</a>
-      <div id="github-card" class="github-card badges" data-user="marissabellusci"></div><script src="http://lab.lepture.com/github-cards/widget.js"></script>
-      <div class="link-group">
-
-        <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
-        <a href="mailto:marissabellusci@gmail.com" target=_blank><img class="email-icon badges" src="2000px-Paper_Plane_Vector.svg.png" alt="paper-airplane-email-icon"></a>
-          </div>
-
-    </div>
+  <div class="github-widget" data-username="marissabellusci"></div>
+      <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
+      </div>
 
   <div class="link-group">
     <a class="socials-link Twitter" href="https://twitter.com/marissabellusci" target=_blank>Twitter</a>
         <a class="twitter-timeline badges" data-lang="en" data-width="300" data-height="406" href="https://twitter.com/marissabellusci?ref_src=twsrc%5Etfw">Tweets by marissabellusci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+      </div>
+
+  <div class="link-group">
+    <a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge badges"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
+          </div>
+
+  <div class="link-group">
+    <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
+    <a href="mailto:marissabellusci@gmail.com" target=_blank><img class="email-icon badges" src="2000px-Paper_Plane_Vector.svg.png" alt="paper-airplane-email-icon"></a>
+      </div>
 
 </div>
 
