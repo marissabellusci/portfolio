@@ -66,7 +66,7 @@ p {
   text-decoration: none;
   color: white;
   background-color: black;
-  margin: .5rem 0rem .5rem 0rem;
+  margin: .5rem 0rem 1rem 0rem;
   padding: 1rem;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -110,6 +110,12 @@ p {
 
 .LI-profile-badge {
   display: block;
+  height: 406px;
+  border-radius: 5px;
+}
+
+.LI-profile-badge > a > img {
+  border-radius: 5px;
 }
 
 .email-icon {
@@ -213,8 +219,10 @@ p {
 
   <div class="link-group">
     <a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
-        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge badges"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
-          </div>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci">
+      <a href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'><img src="linkedin-badge-PLACEHOLDER.png" alt="placeholder for linkedin badge when API is down"></a></div>
+      </div>
 
   <div class="link-group">
     <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
