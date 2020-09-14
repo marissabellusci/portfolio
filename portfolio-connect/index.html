@@ -74,6 +74,7 @@ p {
   opacity: 0;
   transform: scale(0.95);
   width: 10vw;
+  min-width: fit-content;
   height: fit-content;
   justify-content: center;
   text-align: center;
@@ -102,13 +103,6 @@ p {
   margin-top: 2rem;
 }
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100vw;
-}
-
 .twitter-timeline {
   margin: .5rem 0rem .5rem 0rem;
   display: block;
@@ -135,6 +129,8 @@ p {
   align-items: center;
   border:none;
   width: 300px;
+  max-width: 30vw;
+  margin: 0 1rem 0 1rem;
 }
 
 .content-container {
@@ -143,6 +139,8 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: baseline;
+  justify-content: space-evenly;
+  width: 100vw;
 }
 
 @media only screen and (max-width: 1000px){
@@ -153,12 +151,23 @@ p {
   }
   
   .socials-link{
-    padding: 3rem;
     font-size: 3.5rem;
     height: fit-content;
-    visibility: hidden;
     display: flex;
   }
+  
+  .content-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.link-group{
+  width: 75vw;
+}
+
 
   h1{
     font-size: 6rem;
@@ -188,23 +197,23 @@ p {
 
   <div class="link-group">
 <a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script><div class="LI-profile-badge badges"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci"><a class="LI-simple-link" href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'>Marissa Bellusci</a></div>
   </div>
 
   <div class="link-group">
   <a class="socials-link GitHub" href="https://github.com/marissabellusci" target=_blank>GitHub</a>
-      <div id="github-card" class="github-card" data-user="marissabellusci"></div><script src="http://lab.lepture.com/github-cards/widget.js"></script>
+      <div id="github-card" class="github-card badges" data-user="marissabellusci"></div><script src="http://lab.lepture.com/github-cards/widget.js"></script>
       <div class="link-group">
 
         <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
-        <a href="mailto:marissabellusci@gmail.com" target=_blank><img class="email-icon" src="2000px-Paper_Plane_Vector.svg.png" alt="paper-airplane-email-icon"></a>
+        <a href="mailto:marissabellusci@gmail.com" target=_blank><img class="email-icon badges" src="2000px-Paper_Plane_Vector.svg.png" alt="paper-airplane-email-icon"></a>
           </div>
 
     </div>
 
   <div class="link-group">
     <a class="socials-link Twitter" href="https://twitter.com/marissabellusci" target=_blank>Twitter</a>
-        <a class="twitter-timeline" data-lang="en" data-width="300" data-height="406" href="https://twitter.com/marissabellusci?ref_src=twsrc%5Etfw">Tweets by marissabellusci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline badges" data-lang="en" data-width="300" data-height="406" href="https://twitter.com/marissabellusci?ref_src=twsrc%5Etfw">Tweets by marissabellusci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
 </div>
