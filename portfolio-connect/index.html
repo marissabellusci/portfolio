@@ -71,7 +71,7 @@ p {
   font-size: 1.5rem;
   letter-spacing: 2px;
   transition: all 1s;
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.95);
   width: 10vw;
   min-width: fit-content;
@@ -112,10 +112,13 @@ p {
   display: block;
   height: 406px;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .LI-profile-badge > a > img {
   border-radius: 5px;
+  z-index: 2;
+  position: absolute;
 }
 
 .email-icon {
@@ -154,6 +157,8 @@ p {
   width: 100vw;
 }
 
+/*MOBILE CSS*/
+
 @media only screen and (max-width: 1000px){
   .navbar{
     font-size: 3rem;
@@ -168,15 +173,39 @@ p {
   }
   
   .content-container {
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
 }
 
-.link-group{
+.github-group{
   width: 75vw;
+  height: auto;
+  transform: scale(2) translateY(8rem);
+}
+
+.twitter-group{
+  transform: scale(2) translateY(24rem);
+}
+
+.linkedin-group{
+  transform: scale(2) translateY(40rem);
+}
+
+.LI-profile-badge {
+  z-index: 1;
+}
+
+#LI-placeholder {
+  z-index: 2;
+  position: absolute;
+}
+
+
+.email-group{
+  transform: scale(2) translateY(52rem);
 }
 
 
@@ -206,25 +235,25 @@ p {
 
 <div class="content-container">
 
-  <div class="link-group">
+  <div class="link-group github-group">
   <a class="socials-link GitHub" href="https://github.com/marissabellusci" target=_blank>GitHub</a>
   <div class="github-widget" data-username="marissabellusci"></div>
       <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
       </div>
 
-  <div class="link-group">
+  <div class="link-group twitter-group">
     <a class="socials-link Twitter" href="https://twitter.com/marissabellusci" target=_blank>Twitter</a>
         <a class="twitter-timeline badges" data-lang="en" data-width="300" data-height="406" href="https://twitter.com/marissabellusci?ref_src=twsrc%5Etfw">Tweets by marissabellusci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
-  <div class="link-group">
+  <div class="link-group linkedin-group">
     <a class="socials-link LinkedIn" href="https://www.linkedin.com/in/marissabellusci/" target=_blank>LinkedIn</a>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="marissabellusci">
-      <a href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'><img src="linkedin-badge-PLACEHOLDER.png" alt="placeholder for linkedin badge when API is down"></a></div>
+      <a href='https://www.linkedin.com/in/marissabellusci?trk=profile-badge'><img id = "LI-placeholder" src="linkedin-badge-PLACEHOLDER.png" alt="placeholder for linkedin badge when API is down"></a></div>
       </div>
 
-  <div class="link-group">
+  <div class="link-group email-group">
     <a class="socials-link Email" href="mailto:marissabellusci@gmail.com" target=_blank>Email</a>
     <a href="mailto:marissabellusci@gmail.com" target=_blank><img class="email-icon badges" src="2000px-Paper_Plane_Vector.svg.png" alt="paper-airplane-email-icon"></a>
       </div>
