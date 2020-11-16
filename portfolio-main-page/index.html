@@ -156,6 +156,7 @@ a > p {
   text-align: center;
   display: block;
   padding-top: 1rem;
+  font-weight:bold;
 }
 
 h2 {
@@ -173,6 +174,23 @@ h3 {
   width: 80vw;
   margin: 0 auto 0 auto;
   text-shadow: 4px 3px 0px #fff, 4px 3px 0px rgba(0,0,0,0.15);
+}
+
+.tags {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+}
+
+.tags > li {
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  width: fit-content;
+  padding: 7px;
+  margin: 3px;
+  color: black;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.034);
 }
 
 @media (max-width: 1000px){
@@ -256,13 +274,25 @@ h3 {
     <a href="https://cotd-marissa.netlify.app/" target=_blank>
     <img src="catch-of-the-day-img.png" alt="Picture from Catch of the Day React App">
     <p>Catch-of-the-Day React App</p>
+    <ul class="tags">
+      <li>React</li>
+      <li>Dynamic Components</li>
+      <li>Social Media API</li>
+      <li>Firebase</li>
+    </ul>
   </a>
   </div>
 
   <div class="items">
     <a href="https://parkernavarro.netlify.app/" target=_blank>
     <img src="parker.png" alt="Picture from Parker Navarro portfolio">
-    <p>Professional Portfolio - Freelance</p>
+    <p>Marketing Portfolio - Freelance</p>
+    <ul class="tags">
+      <li>React</li>
+      <li>Dynamic Components</li>
+      <li>CSS Flexbox</li>
+      <li>Social Media API</li>
+    </ul>
   </a>
   </div>
 
@@ -273,13 +303,39 @@ h3 {
     <a href="https://marissabellusci.github.io/dollar-dollar-bills-yall/" target=_blank>
     <img src="dollar.png" alt="Picture from novelty webcam filter app">
     <p>Novelty Webcam Filter</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>HTML5 Canvas</li>
+      <li>Video Manipulation</li>
+      <li>CSS Grid</li>
+    </ul>
   </a>
+</div>
+
+<div class="items">
+  <a href="https://marissabellusci.github.io/library/" target=_blank>
+  <img src="library.png" alt="Picture from Library App">
+  <p>Library App</p>
+  <ul class="tags">
+    <li>JavaScript</li>
+    <li>Arrays of Objects</li>
+    <li>Object Prototypes</li>
+    <li>DOM Manipulation</li>
+    <li>CSS Flexbox</li>
+    <li>Local Storage</li>
+  </ul>
+</a>
 </div>
 
   <div class="items">
     <a href="https://marissabellusci.github.io/LocalStorage/" target=_blank>
     <img src="local-storage.png" alt="Picture from local storage exercise">
     <p>Saving to Local Storage</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Local Storage</li>
+      <li>Emoji</li>
+    </ul>
   </a>
   </div>
 
@@ -287,6 +343,11 @@ h3 {
     <a href="https://marissabellusci.github.io/sticky-nav/" target=_blank>
     <img src="stickynav.png">
     <p>Sticky Navigation Bar</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Dynamic CSS/DOM Manipulation</li>
+      <li>CSS Transitions</li>
+    </ul>
   </a>
   </div>
 
@@ -294,6 +355,11 @@ h3 {
     <a href="https://marissabellusci.github.io/JS-and-CSS-Clock/" target=_blank>
     <img src="JS-CSS-Clock.png" alt="Picture from JS/CSS Clock App">
     <p>JS and CSS Clock</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>CSS Transitions</li>
+      <li>Dynamic CSS Manipulation</li>
+    </ul>
     </div>
   </a>
   
@@ -302,6 +368,12 @@ h3 {
     <a href="https://marissabellusci.github.io/HTML-5-Canvas/" target=_blank>
     <img src="canvas.png" alt="Picture from HTML5 Canvas">
     <p>HTML5 Canvas</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>HTML5 Canvas</li>
+      <li>Dynamic CSS Manipulation</li>
+      <li>HSL Color Manipulation</li>
+    </ul>
   </a>
   </div>
 
@@ -309,6 +381,12 @@ h3 {
     <a href="https://marissabellusci.github.io/whack-a-mole/" target=_blank>
     <img src="whackamole.png" alt="Picture from Whack-A-Mole Game">
     <p>Whack-A-Mole Game</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Interactivity/Games</li>
+      <li>Dynamic CSS Manipulation</li>
+      <li>Local Storage</li>
+    </ul>
   </a>
   </div>
 
@@ -316,6 +394,11 @@ h3 {
     <a href="https://marissabellusci.github.io/TOP-countdown-clock/" target=_blank>
     <img src="custom-timer.png">
     <p>Custom Timer</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Dynamic DOM Manipulation</li>
+      <li>Countdown Timer</li>
+    </ul>
   </a>
   </div>
 
@@ -323,6 +406,11 @@ h3 {
     <a href="https://marissabellusci.github.io/video-speed-controller/" target=_blank>
     <img src="videospeedcontroller.png">
     <p>Video Playback Speed Controller</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>HTML5 Video Manipulation</li>
+      <li>Mousemove Events</li>
+    </ul>
   </a>
   </div>
 
@@ -330,6 +418,10 @@ h3 {
     <a href="https://marissabellusci.github.io/rock-paper-scissors-simulator/" target="_blank">
     <img src="rockpaperscissors.png" alt="Picture from Rock Paper Scissors Simulator">
     <p>Rock, Paper, Scissors Simulator</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Interactivity/Games</li>
+    </ul>
   </a>
   </div>
 
@@ -337,6 +429,11 @@ h3 {
     <a href="https://marissabellusci.github.io/click-and-drag/" target=_blank>
     <img src="drag-n-scroll.png" alt="Picture from Drag-To-Scroll Menu">
     <p>Drag-to-Scroll Menu</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Mousemove Events</li>
+      <li>Dynamic CSS Manipulation</li>
+    </ul>
   </a>
   </div>
 
@@ -344,6 +441,12 @@ h3 {
     <a href="https://marissabellusci.github.io/follow-along-nav/" target=_blank>
     <img src="transitioning-dropdown.png" alt="Picture from Transitioning Menu Dropdowns">
     <p>Transitioning Menu Dropdowns</p>
+    <ul class="tags">
+      <li>JavaScript</li>
+      <li>Mousemove Events</li>
+      <li>Dynamic CSS Manipulation</li>
+      <li>Manipulation of Element Coordinates</li>
+    </ul>
   </a>
   </div>
 
