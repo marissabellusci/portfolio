@@ -22,34 +22,44 @@
 
   html {
     box-sizing: border-box;
-    background-image: url("../Blue-abstract-background.png");
+    background-image: url("../Blue-abstract-background.png")!important;
     background-color: linear-gradient(rgb(243, 242, 242), white);
     background-color: linear-gradient( rgba(27, 185, 185, 0.418),  rgba(27, 185, 185, 0.315));
     font-family: 'helvetica neue';
     font-size: 20px;
     font-weight: 200;
     width: 100vw;
+    font-size: 100% !important;
+}
+
+a, a:focus, a:hover {
+  text-decoration: none !important;
+}
+
+a.gh-widget-link {
+  color: #4078C0 !important;
 }
 
 h1 {
   text-align: center;
-  margin-top: 10vh;
-  margin-bottom: 1vh;
-  font-size: 4rem;
+  margin-top: 10vh !important;
+  margin-bottom: 1vh !important;
+  font-size: 5rem  !important;
+  font-weight: 700 !important;
   display: block;
   text-shadow: 5px 5px 2px white;
   text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
 }
 
 p {
-  margin: 1rem;
+  margin: 1rem !important;
   text-align: center;
   font-size: 1.5rem;
   text-shadow: 4px 3px 0px #fff, 4px 3px 0px rgba(0,0,0,0.15);
 }
 
   .navbar {
-    z-index: 1; /* ensures navbar is layered on top of page content */
+    z-index: 3; /* ensures navbar is layered on top of page content */
     display: block;
     background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
     overflow: hidden;
@@ -57,28 +67,30 @@ p {
     top: 0;
     left: 0;
     width: 100vw;
-    height: fit-content;
-    padding-top: 4px;
-    padding-bottom: 1px;
+    height: fit-content !important;
+    /*padding-top: 4px;
+    padding-bottom: 1px;*/
     box-shadow: 0 5px rgba(0, 0, 0, 0.5);
 }
 
  .navlink {
    text-decoration: none;
-   color: white; 
+   color: white !important; 
+   font-weight: 200 !important;
+   font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 25px;
 }
 
-.navlink:hover{
+.navlink:hover, .navlink:focus{
    opacity: 75%;
-   color: thistle;
+   color: thistle !important;
  }
 
 .socials-link{
   text-decoration: none;
-  color: white;
+  color: white !important;
   background-color: black;
   margin: .5rem 0rem 1rem 0rem;
   padding: 1rem;
@@ -92,6 +104,7 @@ p {
   height: fit-content;
   justify-content: center;
   text-align: center;
+  font-weight: 300 !important;
 }
 
 .socials-link.active {
@@ -275,6 +288,8 @@ p {
 </div>
 
 </div>
+
+
 
 <script>
 
