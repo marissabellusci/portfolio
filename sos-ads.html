@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Marissa Bellusci, coding, portfolio, Junior Developer, HTML, CSS, JavaScript, vanilla JS, React, React.js, blog, writing, writing code, web developer, freelance">
+  <meta name="description" content='Portfolio - Main Page: My latest projects are React apps. The first functions as a mock-ecommerce interface: a "shopper" adds items to an order, while an authorized user has the ability to log in (via Twitter, Facebook, or GitHub API) and update inventory details.   The second is a professional portfolio webpage I am continually working on for a client.'>
+  
+  <title>Marissa Bellusci - Portfolio</title>
+  <link rel="shortcut icon" type="image/png" href=favicon.ico>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178760308-1"></script>
+   <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-178760308-1');
+   </script>
+
+</head>
+  
+<body>
+
+<style>
+
+html {
+      box-sizing: border-box;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      background-image: url("../Blue-abstract-background.png");
+      background-color: linear-gradient(rgb(243, 242, 242), white);
+      background-color: linear-gradient(rgba(27, 185, 185, 0.281), rgba(27, 185, 185, 0.418), white);
+    }
+    
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+    display: block;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    z-index: 1; /* ensures navbar is layered on top of page content */
+    padding-top: 4px;
+    padding-bottom: 1px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+ .navlink {
+   text-decoration: none;
+   color: white; 
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+ }
+
+ .navlink:hover{
+   opacity: 75%;
+   color: thistle;
+ }
+
+.header {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 1vh;
+  font-size: 4rem;
+  display: block;
+  text-shadow: 5px 5px 2px white;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.outer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
+  min-height: fit-content;
+  
+}
+
+.items {
+  display: flex;
+  flex-grow: 1;
+  border: solid lightgray;
+  width: 25vw;
+  height: fit-content;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;;
+  padding: .25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 3px 15px 4px rgba(155,155,155,0.3);
+  background: linear-gradient(rgb(243, 242, 242), white);
+
+  transition: all 1s;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.items.active{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.items.active:hover{
+  transform: scale(1.05);
+  box-shadow: 5px 3px 25px 4px rgba(31, 30, 30, 0.459);
+}
+
+
+
+img {
+  border-radius: 10px;
+  box-shadow: 5px, 10px;
+  flex-grow: 5;
+  width: 80%;
+  margin: auto;
+  display: block;
+  box-shadow: 1px 1px 5px lightgrey;
+}
+
+a > p {
+  border: none;
+  flex-grow: 1;
+  width: 80%;
+  margin-block-end: 0em;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+  display: block;
+  padding-top: 1rem;
+  font-weight:bold;
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  margin: 2rem 7rem 2rem 7rem;
+  width: 80vw;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+h3 {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  width: 80vw;
+  margin: 0 auto 0 auto;
+  text-shadow: 4px 3px 0px #fff, 4px 3px 0px rgba(0,0,0,0.15);
+}
+
+.tags {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+}
+
+.tags > li {
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  width: fit-content;
+  padding: 7px;
+  margin: 3px;
+  color: black;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.034);
+}
+
+#code-base-button, 
+#return {
+  display: block;
+  padding: 10px;
+  font-size: 25px;
+  font-family: 'helvetica neue';
+  border: none;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px lightgrey;
+  width:50%;
+  margin: auto auto 5rem auto;
+  background: #EFEFEF;
+  color:black;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#code-base-button:hover,
+#live-preview-button:hover{
+  box-shadow: inset 1px 1px 5px lightgrey;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px){
+  .items{
+  width: fit-content;
+  height: fit-content;
+  margin: 1rem 3rem 1rem 3rem;
+  padding: 1rem 1rem 2rem 1rem;
+  }
+
+  img{
+   width: 587px;
+   height: 587px;
+  }
+
+ html{
+   font-size: 30px;
+   width: 100vw;
+ }
+
+  .navbar{
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .container {
+    width: 100vw;
+  }
+
+  p{
+    margin: 3rem auto 2rem auto;
+    font-size: 2rem;
+  }
+
+  h1{
+    font-size: 6rem;
+    
+  }
+
+  h2{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+
+  </style>
+
+<header class="navbar">
+
+  <a class = "navlink" href = "https://marissabellusci.com">Home</a>
+  <a class = "navlink" href = "/portfolio-main-page/">Portfolio</a>
+  <a class = "navlink" href = "/portfolio-aboutme/">About</a>
+  <a class = "navlink" href = "/portfolio-connect/">Connect</a>
+  <a class = "navlink" href = "https://marissabellusci.wordpress.com/category/blog/coding-blog/" target="_blank">Blog</a>
+
+
+</header>
+
+  <h1 class="header">SOS Ads</h1>
+
+<div class="outer-container">
+<div class="container">
+
+  <!--IMAGES MUST BE SIZED TO 464x464 PIXELS-->
+
+    <div class="items">
+    <img src="portfolio-main-page/SOS-travel-ad-screenshot.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/full-spectrum-ad.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/sos-daily-dose-ad.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/SOS-nongmo-hydration.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/outside-social-media-post.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/sos-rtd-ad.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+  <div class="items">
+    <img src="portfolio-main-page/sos-ad-banner.png" alt="SOS Ad Example">
+  <div>
+  </div>
+  </div>
+
+
+
+ <!-- 
+   <div class="items">
+    <a href="https://marissabellusci.github.io/google-homepage/" target=_blank>
+    <img src="css-google.png" alt="Picture from CSS Deconstructing and Rebuilding">
+    <p>CSS Deconstructing & Rebuilding</p>
+  </a>
+  </div>
+  -->
+
+
+
+</div>
+</div>
+</div>
+
+<div>
+    <a id="return" href="/portfolio-main-page" target=_blank>Return to Portfolio</a>
+  </div>
+
+<footer></footer>
+
+<script>
+
+function debounce(func, wait = 10, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    const items = document.querySelectorAll('.items');
+
+    function checkFade(e){
+      
+      items.forEach(item => {
+        //halfway thru image
+      const fadeInAt = (window.scrollY + window.innerHeight) - item.clientHeight / 2; //window.scrollY tells us how far down the page is scrolled, measured from the top. To measure from the bottom, we add the height of the window.
+        //bottom of image
+      const itemBottom = item.offsetTop + item.clientHeight;
+        
+      
+      const isHalfShown = fadeInAt > item.offsetTop;
+
+      const isNotScrolledPast = window.scrollY < itemBottom;
+
+      if(isHalfShown && isNotScrolledPast){
+        item.classList.add('active');
+      }
+
+      else{
+        item.classList.remove('active');
+      }
+
+      })
+    }
+
+    window.addEventListener('scroll',debounce(checkFade));
+
+    window.addEventListener('load',debounce(checkFade));
+
+
+
+
+
+</script>
+
+</body>
+</html>
